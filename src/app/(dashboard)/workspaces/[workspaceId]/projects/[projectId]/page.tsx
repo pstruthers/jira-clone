@@ -36,14 +36,16 @@ const ProjectIdPage = async ({ params }: ProjectIdPageProps) => {
         </div>
         <div>
           <Button variant="secondary" size="sm" asChild>
-            <Link href={`/workspaces/${initialValues.workspaceId}/projects/${initialValues.$id}/settings`}>
+            <Link
+              href={`/workspaces/${initialValues.workspaceId}/projects/${initialValues.$id}/settings`}
+            >
               <PencilIcon className="size-4 mr-2" />
               Edit Project
             </Link>
           </Button>
         </div>
       </div>
-      <TaskViewSwitcher />
+      <TaskViewSwitcher hideProjectFilter />
     </div>
   );
 }
