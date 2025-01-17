@@ -19,6 +19,7 @@ import Link from "next/link";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { registerSchema } from "../schemas";
 import { useRegister } from "../api/use-register";
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
 
 export const SignUpCard = () => {
   const { mutate, isPending } = useRegister();
@@ -116,6 +117,7 @@ export const SignUpCard = () => {
       </div>
       <CardContent className="p-7 flex flex-col gap-y-4">
         <Button
+          onClick={() => signUpWithGoogle()}
           className="w-full"
           size="lg"
           variant="secondary"
@@ -125,6 +127,7 @@ export const SignUpCard = () => {
           Login with Google
         </Button>
         <Button
+          onClick={() => signUpWithGithub()}
           className="w-full"
           size="lg"
           variant="secondary"
